@@ -1,0 +1,37 @@
+version: '2.1'
+
+# Services we are going to use when running
+services:
+  # Database instance we need to store data
+#  db:
+#    image: postgres:13-alpine
+#    restart: always
+#    environment:
+#      POSTGRES_DB: "userdb"
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "Codepostgresql"
+#      POSTGRES_ROOT_PASSWORD: "Codepostgresql"
+#    # Internal port 3306 should always match mariaDB working port
+#    ports:
+#      - "5432:5432"
+
+
+  frontend:
+    build: namrfront
+    ports:
+      - 3000:3000
+
+
+#  # Backend instance that depends on database instance to start.
+#  backend:
+##    image: /Server
+#    #    image: ktoreasy:latest
+#    build: Server
+#    depends_on:
+#      - db
+#    environment:
+#      - ENVIRONMENT=dev
+#    restart: always
+#    # Internal port 3500 should always match your backend defined port
+#    ports:
+#      - "3510:3500"
